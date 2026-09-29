@@ -1,0 +1,957 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_dashboard" name="shell-type" />
+    <title>Analytics Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#131b2e",
+              "on-secondary-container": "#004666",
+              "on-tertiary-fixed-variant": "#005236",
+              "primary-fixed": "#e2dfff",
+              "inverse-surface": "#283044",
+              "on-surface": "#131b2e",
+              "secondary-container": "#39b8fd",
+              "on-secondary-fixed": "#001e2f",
+              primary: "#3525cd",
+              "on-surface-variant": "#464555",
+              "primary-container": "#4f46e5",
+              "tertiary-fixed-dim": "#4edea3",
+              "surface-variant": "#dae2fd",
+              "surface-dim": "#d2d9f4",
+              "surface-container-low": "#f2f3ff",
+              "on-primary-container": "#dad7ff",
+              "inverse-primary": "#c3c0ff",
+              "surface-container-highest": "#dae2fd",
+              tertiary: "#005338",
+              "tertiary-container": "#006e4b",
+              "on-secondary-fixed-variant": "#004c6e",
+              background: "#faf8ff",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#eaedff",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+              "on-primary-fixed": "#0f0069",
+              outline: "#777587",
+              surface: "#faf8ff",
+              "surface-tint": "#4d44e3",
+              "outline-variant": "#c7c4d8",
+              "on-tertiary-container": "#67f4b7",
+              "inverse-on-surface": "#eef0ff",
+              "on-tertiary-fixed": "#002113",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "secondary-fixed": "#c9e6ff",
+              "secondary-fixed-dim": "#89ceff",
+              "on-primary-fixed-variant": "#3323cc",
+              error: "#ba1a1a",
+              "tertiary-fixed": "#6ffbbe",
+              "surface-container-high": "#e2e7ff",
+              secondary: "#006591",
+              "primary-fixed-dim": "#c3c0ff",
+              "surface-bright": "#faf8ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "space-xl": "2rem",
+              "margin-sm": "1rem",
+              "space-xs": "0.25rem",
+              margin: "2rem",
+              "space-md": "1rem",
+              gutter: "1.5rem",
+              "gutter-sm": "1rem",
+              "space-lg": "1.5rem",
+              "space-sm": "0.5rem",
+            },
+            fontFamily: {
+              "label-sm": ["Inter"],
+              "headline-xl-mobile": ["Inter"],
+              "body-sm": ["Inter"],
+              "headline-sm": ["Inter"],
+              "body-md": ["Inter"],
+              "metric-display": ["Inter"],
+              "headline-xl": ["Inter"],
+              "headline-lg": ["Inter"],
+              "label-md": ["Inter"],
+              "display-lg": ["Inter"],
+              "body-lg": ["Inter"],
+              "headline-md": ["Inter"],
+            },
+            fontSize: {
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.025em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-xl-mobile": [
+                "24px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-sm": [
+                "12px",
+                { lineHeight: "16px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+              "headline-sm": [
+                "16px",
+                {
+                  lineHeight: "24px",
+                  letterSpacing: "-0.005em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": [
+                "14px",
+                { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+              "metric-display": [
+                "28px",
+                {
+                  lineHeight: "34px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-xl": [
+                "30px",
+                {
+                  lineHeight: "38px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "24px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "label-md": [
+                "13px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "display-lg": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.025em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": [
+                "16px",
+                { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+              "headline-md": [
+                "20px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background font-body-md text-on-surface antialiased">
+    <aside
+      class="fixed left-0 top-0 h-screen w-60 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div class="flex flex-col">
+        <div class="h-16 px-space-md flex items-center justify-between">
+          <div class="flex items-center gap-space-sm overflow-hidden">
+            <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shrink-0">
+               <span class="text-on-primary font-bold text-[16px]">A</span>
+              </div>
+              <span class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate">Analytics</span>
+          </div>
+          <button
+            aria-label="Collapse sidebar"
+            class="p-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center justify-center"
+            type="button"
+          >
+            <span class="material-symbols-outlined text-[20px]"
+              >keyboard_double_arrow_left</span
+            >
+          </button>
+        </div>
+        <div class="px-space-md py-space-sm">
+          <span
+            class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant px-space-sm"
+            >Platform</span
+          >
+        </div>
+        <nav
+          class="flex flex-col gap-1 px-space-sm"
+          data-active-classes="bg-primary-container text-on-primary font-headline-sm rounded-lg"
+        >
+          <a
+            aria-current="page"
+            class="flex items-center gap-space-sm px-space-md py-2.5 transition-all bg-primary-container text-on-primary font-headline-sm rounded-lg"
+            data-path="dashboard"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">dashboard</span
+            ><span class="truncate">Dashboard</span></a
+          ><a
+            class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="campaigns"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">campaign</span
+            ><span class="truncate">Campaigns</span></a
+          ><a
+            class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="reports"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">insights</span
+            ><span class="truncate">Reports</span></a
+          ><a
+            class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"
+            data-path="settings"
+            href="#"
+            ><span class="material-symbols-outlined text-[20px]">tune</span
+            ><span class="truncate">Settings</span></a
+          >
+        </nav>
+      </div>
+      <div class="p-space-md flex flex-col gap-space-sm">
+        <div
+          class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-full bg-surface-container-low"
+        >
+          <div
+            class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"
+          ></div>
+          <span
+            class="font-label-sm text-label-sm text-on-surface-variant font-medium truncate"
+            >Pipeline: Operational</span
+          >
+        </div>
+        <div
+          class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors"
+        >
+          <div class="flex items-center gap-space-sm min-w-0">
+            <div
+              class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"
+            >
+              <span
+                class="material-symbols-outlined text-on-primary text-[18px]"
+                >person</span
+              >
+            </div>
+            <div class="min-w-0 flex-1">
+              <p
+                class="font-label-md text-label-md text-on-surface truncate leading-tight"
+              >
+                Acme Workspace
+              </p>
+              <p
+                class="font-body-sm text-body-sm text-on-surface-variant truncate leading-tight"
+              >
+                Enterprise Plan
+              </p>
+            </div>
+          </div>
+          <span
+            class="material-symbols-outlined text-on-surface-variant text-[18px]"
+            >unfold_more</span
+          >
+        </div>
+      </div>
+    </aside>
+    <div class="pl-60 min-h-screen flex flex-col bg-background">
+      <header
+        class="fixed top-0 left-60 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between"
+      >
+        <div class="flex items-center gap-space-md">
+          <div class="flex items-center gap-space-sm">
+            <span class="font-label-md text-label-md text-on-surface-variant"
+              >Workspace:</span
+            >
+            <div
+              class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md cursor-pointer hover:bg-surface-container-high transition-colors"
+            >
+              <span>Production EMEA</span
+              ><span
+                class="material-symbols-outlined text-[16px] text-on-surface-variant"
+                >expand_more</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-space-md">
+          <button
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors shadow-none"
+            type="button"
+          >
+            <span
+              class="material-symbols-outlined text-[18px] text-on-surface-variant"
+              >file_download</span
+            ><span>Export</span></button
+          ><button
+            aria-label="Notifications"
+            class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors relative"
+            type="button"
+          >
+            <span class="material-symbols-outlined text-[20px]"
+              >notifications</span
+            ><span
+              class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary"
+            ></span>
+          </button>
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"
+          >
+            <span class="material-symbols-outlined text-on-primary text-[18px]"
+              >person</span
+            >
+          </div>
+        </div>
+      </header>
+      <main class="w-full pt-16 px-space-lg py-space-lg">
+        <div class="flex flex-col w-full gap-space-lg">
+          <!-- TOP FILTER & TOOLBAR -->
+          <section
+            class="flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-sm"
+          >
+            <!-- Filter Selectors -->
+            <div class="flex flex-wrap items-center gap-space-sm">
+              <!-- Date Range Filter -->
+              <div class="relative group">
+                <button
+                  class="flex items-center gap-2 h-10 px-3.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors text-left text-on-surface"
+                  type="button"
+                >
+                  <span
+                    class="material-symbols-outlined text-[18px] text-primary"
+                    >calendar_today</span
+                  >
+                  <div class="flex flex-col leading-tight">
+                    <span
+                      class="font-label-sm text-[10px] uppercase text-on-surface-variant tracking-wider"
+                      >Date Range</span
+                    >
+                    <span
+                      class="font-label-md text-label-md font-semibold truncate"
+                      >Aug 1 – Aug 10, 2026</span
+                    >
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-[18px] text-on-surface-variant ml-1"
+                    >expand_more</span
+                  >
+                </button>
+              </div>
+              <!-- Campaign Filter -->
+              <select id="campaignFilter" class="h-10 px-3.5 rounded-lg bg-surface-container-low text-on-surface font-label-md">
+                 <option value="all">All Campaigns</option>
+              </select>
+              <!-- Channel Filter -->
+              <select id="channelFilter" class="h-10 px-3.5 rounded-lg bg-surface-container-low text-on-surface font-label-md">
+                <option value="all">All Channels</option>
+              </select>
+            </div>
+            <!-- Actions & Sync Status -->
+            <div
+              class="flex items-center gap-space-md justify-between xl:justify-end"
+            >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low"
+              >
+                <span
+                  class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"
+                ></span>
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant"
+                  >Live: Updated 2m ago</span
+                >
+              </div>
+              <div class="flex items-center gap-2">
+                <button
+                  class="flex items-center gap-1.5 h-10 px-4 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors shadow-sm"
+                  type="button"
+                >
+                  <span
+                    class="material-symbols-outlined text-[18px] text-on-surface-variant"
+                    >download</span
+                  >
+                  <span>Export CSV / PDF</span>
+                </button>
+                <button
+                  aria-label="Refresh Data"
+                  class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-colors shadow-sm"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >sync</span
+                  >
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- 4-COLUMN KPI ROW -->
+          <section
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md"
+          >
+            <!-- Metric 1: Spend -->
+            <div
+              class="flex flex-col justify-between p-5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center justify-between">
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                  >Total Spend</span
+                >
+                <span
+                  class="p-1.5 rounded-lg bg-surface-container-low text-primary flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >payments</span
+                  >
+                </span>
+              </div>
+              <div class="mt-3">
+                <span
+                  class="font-metric-display text-metric-display text-on-surface tracking-tight font-bold"
+                  >$148,650</span
+                >
+              </div>
+              <div
+                class="flex items-center justify-between mt-3 pt-3 border-t border-surface-container-low"
+              >
+                <div
+                  class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-tertiary-fixed/30 text-tertiary font-label-sm text-label-sm font-semibold"
+                >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >trending_up</span
+                  >
+                  <span>+8.4%</span>
+                </div>
+                <!-- Micro sparkline -->
+                <svg
+                  class="w-20 h-6 text-primary"
+                  fill="none"
+                  viewbox="0 0 80 24"
+                >
+                  <path
+                    d="M2 18 L15 14 L28 16 L40 9 L52 11 L64 5 L78 2"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <!-- Metric 2: Conversions -->
+            <div
+              class="flex flex-col justify-between p-5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center justify-between">
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                  >Conversions</span
+                >
+                <span
+                  class="p-1.5 rounded-lg bg-surface-container-low text-tertiary flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >ads_click</span
+                  >
+                </span>
+              </div>
+              <div class="mt-3">
+                <span
+                  class="font-metric-display text-metric-display text-on-surface tracking-tight font-bold"
+                  >14,820</span
+                >
+              </div>
+              <div
+                class="flex items-center justify-between mt-3 pt-3 border-t border-surface-container-low"
+              >
+                <div
+                  class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-tertiary-fixed/30 text-tertiary font-label-sm text-label-sm font-semibold"
+                >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >trending_up</span
+                  >
+                  <span>+14.2%</span>
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant font-medium"
+                  >$10.03 / conv</span
+                >
+              </div>
+            </div>
+            <!-- Metric 3: Blended ROAS -->
+            <div
+              class="flex flex-col justify-between p-5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center justify-between">
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                  >Blended ROAS</span
+                >
+                <span
+                  class="p-1.5 rounded-lg bg-surface-container-low text-primary flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >query_stats</span
+                  >
+                </span>
+              </div>
+              <div class="mt-3 flex items-baseline gap-2">
+                <span
+                  class="font-metric-display text-metric-display text-on-surface tracking-tight font-bold"
+                  >3.84x</span
+                >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant"
+                  >Target: 3.5x</span
+                >
+              </div>
+              <div
+                class="flex items-center justify-between mt-3 pt-3 border-t border-surface-container-low"
+              >
+                <div
+                  class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-tertiary-fixed/30 text-tertiary font-label-sm text-label-sm font-semibold"
+                >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >arrow_upward</span
+                  >
+                  <span>+0.4x target</span>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface font-medium"
+                  >Top Tier</span
+                >
+              </div>
+            </div>
+            <!-- Metric 4: CTR -->
+            <div
+              class="flex flex-col justify-between p-5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center justify-between">
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"
+                  >CTR</span
+                >
+                <span
+                  class="p-1.5 rounded-lg bg-surface-container-low text-secondary flex items-center justify-center"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >touch_app</span
+                  >
+                </span>
+              </div>
+              <div class="mt-3">
+                <span
+                  class="font-metric-display text-metric-display text-on-surface tracking-tight font-bold"
+                  >2.94%</span
+                >
+              </div>
+              <div
+                class="flex items-center justify-between mt-3 pt-3 border-t border-surface-container-low"
+              >
+                <div
+                  class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-tertiary-fixed/30 text-tertiary font-label-sm text-label-sm font-semibold"
+                >
+                  <span class="material-symbols-outlined text-[14px]"
+                    >arrow_upward</span
+                  >
+                  <span>+0.35%</span>
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant font-medium"
+                  >5.05M impr.</span
+                >
+              </div>
+            </div>
+          </section>
+          <!-- WIDE PERFORMANCE CHART CARD -->
+          <section
+            class="flex flex-col bg-surface-container-lowest rounded-xl p-space-lg shadow-sm"
+          >
+            <!-- Header with controls -->
+            <div
+              class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-md border-b border-surface-container-low"
+            >
+              <div>
+                <div class="flex items-center gap-2">
+                  <h2
+                    class="font-headline-md text-headline-md text-on-surface font-semibold"
+                  >
+                    Performance Over Time
+                  </h2>
+                  <span
+                    class="px-2 py-0.5 text-label-sm font-label-sm rounded-full bg-primary/10 text-primary"
+                    >Live Model</span
+                  >
+                </div>
+                <p
+                  class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                >
+                  Daily track of spend, conversion volume, and revenue trend
+                  across selected date range
+                </p>
+              </div>
+              <div class="flex flex-wrap items-center gap-4">
+                <!-- Series toggles / legend -->
+                <div class="flex items-center gap-4 mr-2">
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="w-3 h-3 rounded-sm bg-primary-container"
+                    ></span>
+                    <span
+                      class="font-label-md text-label-md text-on-surface font-medium"
+                      >Spend ($)</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="w-3 h-3 rounded-sm bg-tertiary-container"
+                    ></span>
+                    <span
+                      class="font-label-md text-label-md text-on-surface font-medium"
+                      >Revenue / Conv</span
+                    >
+                  </div>
+                </div>
+                <!-- Interval Tab Selector -->
+                <div class="flex p-1 bg-surface-container-low rounded-lg">
+                  <button
+                    class="px-3 py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold shadow-sm transition-all"
+                    type="button"
+                  >
+                    Daily
+                  </button>
+                  <button
+                    class="px-3 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                    type="button"
+                  >
+                    Weekly
+                  </button>
+                  <button
+                    class="px-3 py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all"
+                    type="button"
+                  >
+                    Monthly
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Chart Visualization Area -->
+
+            <div class="relative w-full mt-6 h-80">
+              <canvas id="trendChart"></canvas>
+            </div>
+          </section>
+          <!-- TWO SIDE-BY-SIDE CARDS: CAMPAIGNS & CHANNELS -->
+          <section class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+            <!-- Card Left: Spend by Campaign -->
+            <div
+              class="flex flex-col justify-between bg-surface-container-lowest rounded-xl p-space-lg shadow-sm"
+            >
+              <div>
+                <div
+                  class="flex items-center justify-between pb-space-sm border-b border-surface-container-low"
+                >
+                  <div>
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                    >
+                      Spend by Campaign
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Top performing campaigns by budget allocation &amp; return
+                    </p>
+                  </div>
+                  <button
+                    class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >more_vert</span
+                    >
+                  </button>
+                </div>
+                <!-- Campaign Rows -->
+                <div class="relative w-full mt-6" style="height: 280px;">
+                   <canvas id="campaignChart"></canvas>
+                </div>
+                    
+                </div>
+              </div>
+              <div
+                class="mt-5 pt-3 border-t border-surface-container-low flex items-center justify-between"
+              >
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Displaying top 5 of 8 active campaigns</span
+                >
+                <button
+                  class="font-label-md text-label-md text-primary font-semibold hover:underline flex items-center gap-1"
+                  type="button"
+                >
+                  <span>View all campaigns</span>
+                  <span class="material-symbols-outlined text-[16px]"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Card Right: Spend by Channel -->
+            <div
+              class="flex flex-col justify-between bg-surface-container-lowest rounded-xl p-space-lg shadow-sm"
+            >
+              <div>
+                <div
+                  class="flex items-center justify-between pb-space-sm border-b border-surface-container-low"
+                >
+                  <div>
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                    >
+                      Spend by Channel
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant"
+                    >
+                      Distribution across paid media acquisition channels
+                    </p>
+                  </div>
+                  <button
+                    class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >tune</span
+                    >
+                  </button>
+                </div>
+                <!-- Donut & Breakdown Grid -->
+                <div class="flex flex-col sm:flex-row items-center gap-6 mt-6">
+                  <!-- Donut SVG Canvas -->
+                  <div
+                    class="relative w-44 h-44 shrink-0 flex items-center justify-center"
+                  >
+                    <canvas id="channelChart"></canvas>
+                  </div>
+                  <!-- Channel List Breakdown -->
+                  <div class="flex-1 w-full flex flex-col gap-3">
+                    <!-- Google -->
+                    <div
+                      class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors"
+                    >
+                      <div class="flex items-center gap-2.5">
+                        <span
+                          class="w-3 h-3 rounded-full bg-primary shrink-0"
+                        ></span>
+                        <div class="flex flex-col leading-none">
+                          <span
+                            class="font-label-md text-label-md font-semibold text-on-surface"
+                            >Google Ads</span
+                          >
+                          <span
+                            class="font-body-sm text-[11px] text-on-surface-variant mt-0.5"
+                            >Search &amp; PMax</span
+                          >
+                        </div>
+                      </div>
+                      <div class="text-right leading-none">
+                        <span
+                          class="font-label-md text-label-md font-bold text-on-surface"
+                          >$62.4K</span
+                        >
+                        <span
+                          class="font-label-sm text-[11px] text-on-surface-variant block mt-0.5"
+                          >42%</span
+                        >
+                      </div>
+                    </div>
+                    <!-- Meta -->
+                    <div
+                      class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors"
+                    >
+                      <div class="flex items-center gap-2.5">
+                        <span
+                          class="w-3 h-3 rounded-full bg-secondary shrink-0"
+                        ></span>
+                        <div class="flex flex-col leading-none">
+                          <span
+                            class="font-label-md text-label-md font-semibold text-on-surface"
+                            >Meta Ads</span
+                          >
+                          <span
+                            class="font-body-sm text-[11px] text-on-surface-variant mt-0.5"
+                            >IG &amp; FB Feeds</span
+                          >
+                        </div>
+                      </div>
+                      <div class="text-right leading-none">
+                        <span
+                          class="font-label-md text-label-md font-bold text-on-surface"
+                          >$47.5K</span
+                        >
+                        <span
+                          class="font-label-sm text-[11px] text-on-surface-variant block mt-0.5"
+                          >32%</span
+                        >
+                      </div>
+                    </div>
+                    <!-- TikTok -->
+                    <div
+                      class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors"
+                    >
+                      <div class="flex items-center gap-2.5">
+                        <span
+                          class="w-3 h-3 rounded-full bg-secondary-container shrink-0"
+                        ></span>
+                        <div class="flex flex-col leading-none">
+                          <span
+                            class="font-label-md text-label-md font-semibold text-on-surface"
+                            >TikTok Ads</span
+                          >
+                          <span
+                            class="font-body-sm text-[11px] text-on-surface-variant mt-0.5"
+                            >Video Spark Ads</span
+                          >
+                        </div>
+                      </div>
+                      <div class="text-right leading-none">
+                        <span
+                          class="font-label-md text-label-md font-bold text-on-surface"
+                          >$23.8K</span
+                        >
+                        <span
+                          class="font-label-sm text-[11px] text-on-surface-variant block mt-0.5"
+                          >16%</span
+                        >
+                      </div>
+                    </div>
+                    <!-- LinkedIn -->
+                    <div
+                      class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors"
+                    >
+                      <div class="flex items-center gap-2.5">
+                        <span
+                          class="w-3 h-3 rounded-full bg-tertiary shrink-0"
+                        ></span>
+                        <div class="flex flex-col leading-none">
+                          <span
+                            class="font-label-md text-label-md font-semibold text-on-surface"
+                            >LinkedIn Ads</span
+                          >
+                          <span
+                            class="font-body-sm text-[11px] text-on-surface-variant mt-0.5"
+                            >Lead Gen Forms</span
+                          >
+                        </div>
+                      </div>
+                      <div class="text-right leading-none">
+                        <span
+                          class="font-label-md text-label-md font-bold text-on-surface"
+                          >$14.9K</span
+                        >
+                        <span
+                          class="font-label-sm text-[11px] text-on-surface-variant block mt-0.5"
+                          >10%</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mt-5 pt-3 border-t border-surface-container-low flex items-center justify-between"
+              >
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Attribution model: Data-driven blended</span
+                >
+                <button
+                  class="font-label-md text-label-md text-primary font-semibold hover:underline flex items-center gap-1"
+                  type="button"
+                >
+                  <span>Channel settings</span>
+                  <span class="material-symbols-outlined text-[16px]"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

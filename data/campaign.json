@@ -1,0 +1,392 @@
+[
+  {
+    "id": "camp-001",
+    "name": "Summer Sale — Search",
+    "channel": "Search",
+    "status": "active",
+    "dailyStats": [
+      {
+        "date": "2026-08-01",
+        "impressions": 12400,
+        "clicks": 310,
+        "spend": 420.5,
+        "conversions": 18
+      },
+      {
+        "date": "2026-08-02",
+        "impressions": 13100,
+        "clicks": 298,
+        "spend": 405.1,
+        "conversions": 15
+      },
+      {
+        "date": "2026-08-03",
+        "impressions": 11800,
+        "clicks": 325,
+        "spend": 440.75,
+        "conversions": 21
+      },
+      {
+        "date": "2026-08-04",
+        "impressions": 14000,
+        "clicks": 350,
+        "spend": 460.0,
+        "conversions": 25
+      },
+      {
+        "date": "2026-08-05",
+        "impressions": 15000,
+        "clicks": 370,
+        "spend": 480.25,
+        "conversions": 28
+      },
+      {
+        "date": "2026-08-06",
+        "impressions": 12800,
+        "clicks": 300,
+        "spend": 410.0,
+        "conversions": 22
+      },
+      {
+        "date": "2026-08-07",
+        "impressions": 17000,
+        "clicks": 410,
+        "spend": 520.75,
+        "conversions": 32
+      },
+      {
+        "date": "2026-08-08",
+        "impressions": 18000,
+        "clicks": 430,
+        "spend": 540.0,
+        "conversions": 35
+      },
+      {
+        "date": "2026-08-09",
+        "impressions": 19000,
+        "clicks": 450,
+        "spend": 560.25,
+        "conversions": 38
+      },
+      {
+        "date": "2026-08-10",
+        "impressions": 20000,
+        "clicks": 470,
+        "spend": 580.5,
+        "conversions": 40
+      }
+    ]
+  },
+  {
+    "id": "camp-002",
+    "name": "Back to School — Social",
+    "channel": "Social",
+    "status": "active",
+    "dailyStats": [
+      {
+        "date": "2026-08-01",
+        "impressions": 22000,
+        "clicks": 540,
+        "spend": 310.0,
+        "conversions": 30
+      },
+      {
+        "date": "2026-08-02",
+        "impressions": 21500,
+        "clicks": 510,
+        "spend": 298.25,
+        "conversions": 27
+      },
+      {
+        "date": "2026-08-03",
+        "impressions": 23100,
+        "clicks": 580,
+        "spend": 325.6,
+        "conversions": 33
+      },
+      {
+        "date": "2026-08-04",
+        "impressions": 19500,
+        "clicks": 480,
+        "spend": 280.0,
+        "conversions": 24
+      },
+      {
+        "date": "2026-08-05",
+        "impressions": 25000,
+        "clicks": 620,
+        "spend": 355.75,
+        "conversions": 40
+      },
+      {
+        "date": "2026-08-06",
+        "impressions": 26000,
+        "clicks": 650,
+        "spend": 370.5,
+        "conversions": 42
+      },
+      {
+        "date": "2026-08-07",
+        "impressions": 27000,
+        "clicks": 680,
+        "spend": 385.25,
+        "conversions": 45
+      },
+      {
+        "date": "2026-08-08",
+        "impressions": 28000,
+        "clicks": 700,
+        "spend": 400.0,
+        "conversions": 48
+      },
+      {
+        "date": "2026-08-09",
+        "impressions": 29000,
+        "clicks": 720,
+        "spend": 415.75,
+        "conversions": 50
+      },
+      {
+        "date": "2026-08-10",
+        "impressions": 30000,
+        "clicks": 750,
+        "spend": 430.5,
+        "conversions": 55
+      }
+    ]
+  },
+  {
+    "id": "camp-003",
+    "name": "Black Friday Blowout - Search",
+    "channel": "Search",
+    "status": "paused",
+    "dailyStats": [
+      {
+        "date": "2026-08-01",
+        "impressions": 12000,
+        "clicks": 290,
+        "spend": 200,
+        "conversions": 14
+      },
+      {
+        "date": "2026-08-02",
+        "impressions": 13550,
+        "clicks": 320,
+        "spend": 210,
+        "conversions": 16
+      },
+      {
+        "date": "2026-08-03",
+        "impressions": 13700,
+        "clicks": 350,
+        "spend": 230.6,
+        "conversions": 19
+      },
+      {
+        "date": "2026-08-04",
+        "impressions": 15000,
+        "clicks": 375,
+        "spend": 246.0,
+        "conversions": 24
+      },
+      {
+        "date": "2026-08-05",
+        "impressions": 16000,
+        "clicks": 400,
+        "spend": 260.06,
+        "conversions": 28
+      },
+      {
+        "date": "2026-08-06",
+        "impressions": 17060,
+        "clicks": 420,
+        "spend": 289,
+        "conversions": 32
+      },
+      {
+        "date": "2026-08-07",
+        "impressions": 18000,
+        "clicks": 450,
+        "spend": 310.5,
+        "conversions": 35
+      },
+      {
+        "date": "2026-08-08",
+        "impressions": 18700,
+        "clicks": 477,
+        "spend": 476.85,
+        "conversions": 39
+      },
+      {
+        "date": "2026-08-09",
+        "impressions": 19340,
+        "clicks": 510,
+        "spend": 500,
+        "conversions": 45
+      },
+      {
+        "date": "2026-08-10",
+        "impressions": 20000,
+        "clicks": 540,
+        "spend": 520.75,
+        "conversions": 50
+      }
+    ]
+  },
+  {
+    "id": "camp-004",
+    "name": "Referral Boost - Social",
+    "channel": "Social",
+    "status": "active",
+    "dailyStats": [
+      {
+        "date": "2026-08-01",
+        "impressions": 15000,
+        "clicks": 400,
+        "spend": 300.0,
+        "conversions": 20
+      },
+      {
+        "date": "2026-08-02",
+        "impressions": 15500,
+        "clicks": 420,
+        "spend": 310.5,
+        "conversions": 22
+      },
+      {
+        "date": "2026-08-03",
+        "impressions": 16000,
+        "clicks": 450,
+        "spend": 320.75,
+        "conversions": 25
+      },
+      {
+        "date": "2026-08-04",
+        "impressions": 16500,
+        "clicks": 470,
+        "spend": 330.0,
+        "conversions": 28
+      },
+      {
+        "date": "2026-08-05",
+        "impressions": 17000,
+        "clicks": 500,
+        "spend": 340.25,
+        "conversions": 30
+      },
+      {
+        "date": "2026-08-06",
+        "impressions": 17500,
+        "clicks": 520,
+        "spend": 350.5,
+        "conversions": 32
+      },
+      {
+        "date": "2026-08-07",
+        "impressions": 18000,
+        "clicks": 540,
+        "spend": 360.75,
+        "conversions": 35
+      },
+      {
+        "date": "2026-08-08",
+        "impressions": 18500,
+        "clicks": 560,
+        "spend": 370.0,
+        "conversions": 38
+      },
+      {
+        "date": "2026-08-09",
+        "impressions": 19000,
+        "clicks": 580,
+        "spend": 380.25,
+        "conversions": 40
+      },
+      {
+        "date": "2026-08-10",
+        "impressions": 19500,
+        "clicks": 600,
+        "spend": 390.5,
+        "conversions": 42
+      }
+    ]
+  },
+  {
+    "id": "camp-005",
+    "name": "Holiday Season — Search",
+    "channel": "Search",
+    "status": "active",
+    "dailyStats": [
+      {
+        "date": "2026-08-01",
+        "impressions": 25000,
+        "clicks": 600,
+        "spend": 500.0,
+        "conversions": 40
+      },
+      {
+        "date": "2026-08-02",
+        "impressions": 26000,
+        "clicks": 620,
+        "spend": 520.5,
+        "conversions": 42
+      },
+      {
+        "date": "2026-08-03",
+        "impressions": 27000,
+        "clicks": 650,
+        "spend": 540.75,
+        "conversions": 45
+      },
+      {
+        "date": "2026-08-04",
+        "impressions": 28000,
+        "clicks": 670,
+        "spend": 560.0,
+        "conversions": 48
+      },
+      {
+        "date": "2026-08-05",
+        "impressions": 29000,
+        "clicks": 700,
+        "spend": 580.25,
+        "conversions": 50
+      },
+      {
+        "date": "2026-08-06",
+        "impressions": 30000,
+        "clicks": 720,
+        "spend": 600.5,
+        "conversions": 52
+      },
+      {
+        "date": "2026-08-07",
+        "impressions": 31000,
+        "clicks": 740,
+        "spend": 620.75,
+        "conversions": 55
+      },
+      {
+        "date": "2026-08-08",
+        "impressions": 27500,
+        "clicks": 640,
+        "spend": 510.0,
+        "conversions": 44
+      },
+      {
+        "date": "2026-08-09",
+        "impressions": 33000,
+        "clicks": 780,
+        "spend": 660.25,
+        "conversions": 60
+      },
+      {
+        "date": "2026-08-10",
+        "impressions": 34000,
+        "clicks": 800,
+        "spend": 680.5,
+        "conversions": 62
+      }
+    ]
+  }
+]
