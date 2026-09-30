@@ -130,19 +130,11 @@
             fontSize: {
               "label-sm": [
                 "11px",
-                {
-                  lineHeight: "14px",
-                  letterSpacing: "0.025em",
-                  fontWeight: "600",
-                },
+                { lineHeight: "14px", letterSpacing: "0.025em", fontWeight: "600" },
               ],
               "headline-xl-mobile": [
                 "24px",
-                {
-                  lineHeight: "32px",
-                  letterSpacing: "-0.015em",
-                  fontWeight: "600",
-                },
+                { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" },
               ],
               "body-sm": [
                 "12px",
@@ -150,11 +142,7 @@
               ],
               "headline-sm": [
                 "16px",
-                {
-                  lineHeight: "24px",
-                  letterSpacing: "-0.005em",
-                  fontWeight: "600",
-                },
+                { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600" },
               ],
               "body-md": [
                 "14px",
@@ -162,43 +150,23 @@
               ],
               "metric-display": [
                 "28px",
-                {
-                  lineHeight: "34px",
-                  letterSpacing: "-0.02em",
-                  fontWeight: "600",
-                },
+                { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "600" },
               ],
               "headline-xl": [
                 "30px",
-                {
-                  lineHeight: "38px",
-                  letterSpacing: "-0.02em",
-                  fontWeight: "600",
-                },
+                { lineHeight: "38px", letterSpacing: "-0.02em", fontWeight: "600" },
               ],
               "headline-lg": [
                 "24px",
-                {
-                  lineHeight: "32px",
-                  letterSpacing: "-0.015em",
-                  fontWeight: "600",
-                },
+                { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" },
               ],
               "label-md": [
                 "13px",
-                {
-                  lineHeight: "16px",
-                  letterSpacing: "0.01em",
-                  fontWeight: "500",
-                },
+                { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "500" },
               ],
               "display-lg": [
                 "36px",
-                {
-                  lineHeight: "44px",
-                  letterSpacing: "-0.025em",
-                  fontWeight: "700",
-                },
+                { lineHeight: "44px", letterSpacing: "-0.025em", fontWeight: "700" },
               ],
               "body-lg": [
                 "16px",
@@ -206,11 +174,7 @@
               ],
               "headline-md": [
                 "20px",
-                {
-                  lineHeight: "28px",
-                  letterSpacing: "-0.01em",
-                  fontWeight: "600",
-                },
+                { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" },
               ],
             },
           },
@@ -220,7 +184,8 @@
   </head>
   <body class="bg-background font-body-md text-on-surface antialiased">
     <aside
-      class="fixed left-0 top-0 h-screen w-60 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+      id="sidebar"
+      class="fixed left-0 top-0 h-screen w-60 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)] transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out"
     >
       <div class="flex flex-col">
         <div class="h-16 px-space-md flex items-center justify-between">
@@ -231,6 +196,7 @@
               <span class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate">Analytics</span>
           </div>
           <button
+            id="sidebarToggle"
             aria-label="Collapse sidebar"
             class="p-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center justify-center"
             type="button"
@@ -322,12 +288,18 @@
         </div>
       </div>
     </aside>
-    <div class="pl-60 min-h-screen flex flex-col bg-background">
+
+    <div id="sidebarBackdrop" class="fixed inset-0 bg-black/40 z-40 hidden lg:hidden"></div>
+
+    <div id="mainWrap" class="lg:pl-60 min-h-screen flex flex-col bg-background transition-all duration-300">
       <header
-        class="fixed top-0 left-60 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between"
+        class="fixed top-0 left-0 lg:left-60 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-lg flex items-center justify-between transition-all duration-300"
       >
         <div class="flex items-center gap-space-md">
-          <div class="flex items-center gap-space-sm">
+          <button id="mobileMenuToggle" class="lg:hidden p-2 rounded-lg hover:bg-surface-container-low text-on-surface" aria-label="Open menu" type="button">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <div class="hidden sm:flex items-center gap-space-sm">
             <span class="font-label-md text-label-md text-on-surface-variant"
               >Workspace:</span
             >
@@ -344,7 +316,7 @@
         </div>
         <div class="flex items-center gap-space-md">
           <button
-            class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors shadow-none"
+            class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors shadow-none"
             type="button"
           >
             <span
@@ -371,7 +343,7 @@
           </div>
         </div>
       </header>
-      <main class="w-full pt-16 px-space-lg py-space-lg">
+      <main class="w-full pt-16 px-4 sm:px-space-lg py-space-lg">
         <div class="flex flex-col w-full gap-space-lg">
           <!-- TOP FILTER & TOOLBAR -->
           <section
@@ -431,7 +403,7 @@
               </div>
               <div class="flex items-center gap-2">
                 <button
-                  class="flex items-center gap-1.5 h-10 px-4 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors shadow-sm"
+                  class="hidden sm:flex items-center gap-1.5 h-10 px-4 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors shadow-sm"
                   type="button"
                 >
                   <span
